@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker|Dekko" rel="stylesheet">
+	<title>Chore Chart Printout</title>
+</head>
+
+<body>
+	<div id="printout" class="printout">
+		<header>
+			<div class="container v-flex-container">
+				<div class="sb-flex-container">
+					<h1 class="title user-color">Chore Chart</h1>
+				</div>
+				<div class="sub-header sb-flex-container user-color user-border">
+					<div class="subhead-tab">
+						<h4>Name:
+							<span class="h2" id="name">Name1</span>
+						</h4>
+					</div>
+					<div class="subhead-tab">
+						<h4>Dates:
+							<span class="h2" id="dates">1/7/2019 - 1/13/2019</span>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<ul>
+				<li>
+					<div class="sb-flex-container">
+						<div class="titles">
+							<h4>My Chores</h4>
+						</div>
+						<div class="chart sb-flex-container">
+							<h4>Mon</h4>
+							<h4>Tue</h4>
+							<h4>Wed</h4>
+							<h4>Thu</h4>
+							<h4>Fri</h4>
+							<h4>Sat</h4>
+							<h4>Sun</h4>
+						</div>
+					</div>
+				</li>
+				<li class="chore-temp">
+					<div class="sb-flex-container">
+						<div class="titles">
+							<h2 class="user-border-bum" id="chore">
+								Test Chore
+							</h2>
+						</div>
+						<div class="chart sb-flex-container">
+							<div class="box b1 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b2 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b3 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b4 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b5 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b6 sb-flex-container">
+								<div></div>
+							</div>
+							<div class="box b7 sb-flex-container">
+								<div></div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<style>
+		@charset "utf-8";
+		/* CSS Document */
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+		}
+
+		/* http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126 License: none (public domain) */
+
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		/* HTML5 display-role reset for older browsers */
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section {
+			display: block;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		ol,
+		ul {
+			list-style: none;
+		}
+
+		blockquote,
+		q {
+			quotes: none;
+		}
+
+		blockquote:before,
+		blockquote:after,
+		q:before,
+		q:after {
+			content: '';
+			content: none;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		html {
+			width: 816px;
+			height: 1056px;
+		}
+
+		body {
+			max-width: 816px;
+			min-height: 1056px;
+		}
+
+		h1 {
+			font-size: 75px;
+			font-family: Permanent Marker;
+		}
+
+		h2 {
+			color: black;
+			font-size: 24px;
+			font-family: kalam;
+		}
+
+		.h2 {
+			color: black;
+			border: none;
+			font-size: 24px;
+			font-family: kalam;
+		}
+
+		h4 {
+			font-size: 18px;
+		}
+
+		header {
+			height: 256px;
+		}
+
+		.container {
+			width: 95%;
+			max-width: 1200px;
+			margin: 0 auto;
+			position: relative;
+			height: inherit;
+		}
+
+		.sb-flex-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.v-flex-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			height: 100%;
+		}
+
+		.printout {
+			margin-bottom: 238px;
+			transform: rotate(90deg) translate(120px, 120px);
+			max-height: 816px;
+			height: 816px;
+			width: 1056px;
+		}
+
+		.title {
+			margin: 0 auto;
+		}
+
+		.sub-header {
+			padding: 18px;
+			border-radius: 500px;
+			min-width: 75%;
+			width: fit-content;
+			margin: 0 auto;
+			font-size: 18px;
+			font-family: 'dekko';
+		}
+
+		.subhead-tab~.subhead-tab {
+			margin: 0 0 0 250px;
+		}
+
+		.content {
+			margin: 0 96px 0 96px;
+		}
+
+		.content ul li {
+			margin-bottom: 16px;
+			font-family: 'dekko';
+			color: #05ff75;
+		}
+
+		.titles {
+			width: 45%;
+		}
+
+		.chart {
+			width: 50%;
+		}
+
+		.chart h4 {
+			width: 50px;
+			text-align: center;
+		}
+
+		.box {
+			border: 1px solid #05ff75;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+		}
+
+		.box div {
+			margin: 0 auto;
+			color: black;
+			font-family: 'kalam';
+			font-size: 32px;
+		}
+
+		@page {
+			margin: 0px;
+		}
+
+		.user-color {
+			color: #05ff75;
+		}
+
+		.user-back {
+			background: #05ff75;
+		}
+
+		.user-border {
+			border: 1px solid #05ff75;
+		}
+
+		.user-border-bum {
+			border-bottom: 1px solid #05ff75;
+		}
+	</style>
+	<script>
+		const ipc = require('electron').ipcRenderer;
+		var settings = {};
+		var Monday;
+
+		window.onload = () => {
+			ipc.once('settingsReturn', function (event, response) {
+				settings = response;
+				buildPrintout();
+			});
+			ipc.send('requestSettings', '');
+			document.addEventListener('click', (event) => {
+				window.close();
+			});
+		};
+
+		function buildPrintout() {
+			var template = document.getElementById('printout');
+			var order = [];
+			Object.getOwnPropertyNames(settings.users).forEach((user, useri, usera) => {
+
+				//***figure out order***
+
+				if (settings.users[user].index != useri) {
+
+				}
+
+				//***titles***
+
+				var tempClone = template.cloneNode(true);
+				tempClone.querySelector('#name').innerHTML = user;
+				Monday = settings.monday;
+				var nextMon = Monday + (6 * 86400000);
+				monday = new Date(Monday).toLocaleDateString();
+				nextMon = new Date(nextMon).toLocaleDateString();
+				tempClone.querySelector('#dates').innerHTML = `${monday} - ${nextMon}`;
+				Monday = Monday / 86400000;
+				start = Math.ceil(new Date(2019, 0, 1).getTime() / 86400000);
+				Monday = Monday - start;
+
+				//***shared chores***
+
+				var choreTemp = tempClone.querySelector('.chore-temp');
+				var choreClone = choreTemp.cloneNode(true);
+				choreClone.querySelector('#chore').innerHTML = 'Shared Chores';
+				choreClone.querySelectorAll('.box').forEach((value, index, array) => {
+					choreClone.querySelector(`.b${index + 1} div`).innerHTML = choreCalc().shared(settings.users[user].index, usera, index);
+				});
+				tempClone.querySelector('.content ul').appendChild(choreClone);
+				choreClone = null;
+
+
+				//***user's chores***
+
+				choreClone = choreTemp.cloneNode(true);
+				choreClone.querySelector('#chore').innerHTML = `${user}'s Chores`;
+				choreClone.querySelectorAll('.box').forEach((value, index, array) => {
+					choreClone.querySelector(`.b${index + 1} div`).innerHTML = choreCalc().specific(settings.users[user].specific, index);
+				});
+				tempClone.querySelector('.content ul').appendChild(choreClone);
+				choreClone = null;
+
+				//***daily chores***
+
+				settings.users[user].daily.forEach((dchore, ichore, achore) => {
+					choreClone = choreTemp.cloneNode(true);
+					choreClone.querySelector('#chore').innerHTML = dchore;
+					tempClone.querySelector('.content ul').appendChild(choreClone);
+					choreClone = null;
+				});
+
+				//***alternating chores***
+
+				settings.users[user].alternate.forEach((chore, chorei, chorea) => {
+					choreClone = choreTemp.cloneNode(true);
+					choreClone.querySelector('#chore').innerHTML = chore.type;
+					choreClone.querySelectorAll('.box').forEach((value, index, array) => {
+						choreClone.querySelector(`.b${index + 1} div`).innerHTML = choreCalc().alternate(chore, index);
+					});
+					tempClone.querySelector('.content ul').appendChild(choreClone);
+					choreClone = null;
+				});
+
+				choreTemp.remove();
+
+
+				order[settings.users[user].index] = tempClone;
+			});
+			order.forEach((oNode, oIndex, oArray) => {
+				if (oNode.querySelectorAll('.chore-temp').length > 8) {
+					var oNodeExtra = template.cloneNode(true);
+					oNodeExtra.querySelector('.chore-temp').remove();
+					var content = oNodeExtra.querySelector('.content');
+					oNode.querySelectorAll('.chore-temp').forEach((chore, index, all) => {
+						if (index >= 8) {
+							content.querySelector('ul').appendChild(chore);
+						}
+					});
+					oNodeExtra.innerHTML = '';
+					oNodeExtra.appendChild(content);
+				}
+				document.body.appendChild(oNode);
+				if (oNodeExtra != undefined) {
+					document.body.appendChild(oNodeExtra);
+				}
+			});
+			template.remove();
+			document.querySelectorAll('.user-color, .content ul li').forEach((element) => {
+				element.style.color = settings.color;
+			});
+			document.querySelectorAll('.user-back').forEach((element) => {
+				element.style.background = settings.color;
+			});
+			document.querySelectorAll('.user-border, .box').forEach((element) => {
+				element.style.border = `1px solid ${settings.color}`;
+			});
+			document.querySelectorAll('.user-border-bum').forEach((element) => {
+				element.style['border-bottom'] = `1px solid ${settings.color}`;
+			});
+			window.print();
+		}
+
+		function choreCalc() {
+			this.shared = (useri, usera, index) => {
+				var start = settings.shared.start;
+				var max = settings.shared.max;
+				var users = usera.length;
+				var y = users * (Monday + index) - users + useri;
+				return (y - start) % max + 1;
+			};
+			this.specific = (setting, index) => {
+				var start = setting.start;
+				var max = setting.max;
+				return (Monday + index - start) % max + 1;
+			};
+			this.alternate = (setting, index) => {
+				var start = setting.start;
+				var max = setting.options.length;
+				return setting.options[(Monday + index - start) % max];
+			}
+			return this;
+		}
+
+	</script>
+</body>
+
+</html>

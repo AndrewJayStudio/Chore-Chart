@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html id="top">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<title>Chore Chart</title>
+	<link href="https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker|Dekko" rel="stylesheet">
+	<link rel="alternate" type="text/html" href="printout.html">
+</head>
+
+<body>
+	<div class="spacer">
+	</div>
+	<header>
+		<div class="container sb-flex-container">
+			<div class="dates">
+				<div class="v-flex-container">
+					<label for="monday" id="date-label">
+					</label>
+					<div class="sb-flex-container">
+						<div class="arrow" onclick="nextWeek(true)">
+							<svg viewBox="0 0 50 80" xml:space="preserve">
+								<polyline fill="#555" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+									points="
+  45.63,75.8 0.375,38.087 45.63,0.375 " />
+							</svg>
+						</div>
+						<input type="text" id="monday">
+						<div class="arrow" onclick="nextWeek(false)">
+							<svg viewBox="0 0 50 80" xml:space="preserve">
+								<polyline fill="#555" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+									points="
+  0.375,0.375 45.63,38.087 0.375,75.8 " />
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1 class="header-text user-color">
+				Chore Chart
+			</h1>
+			<div class="settings-icon">
+				<img src="images/settings.svg" alt="settings">
+			</div>
+		</div>
+	</header>
+	<div class="underbody container">
+		<div class="sb-flex-container" name="parent">
+		</div>
+
+		<div class="data-block" name="data-block">
+			<div class="block-header">
+				<div class="container sb-flex-container">
+					<h2 class="block-name" name="name">
+					</h2>
+				</div>
+			</div>
+			<div class="block-body">
+				<div class="sb-flex-container align-start">
+					<div class="column">
+						<div class="v-flex-container">
+							<div class="section">
+								<h3>Shared Chores:
+									<span name="shared"></span>
+								</h3>
+							</div>
+							<div class="section">
+								<h3>Alternating:</h3>
+								<ul name="alternate">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="v-flex-container">
+							<div class="section">
+								<h3 name="specChore"></h3>
+							</div>
+							<div class="section">
+								<h3>Everyday Chores:</h3>
+								<ul name="daily">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="print user-back">
+		<div class="sb-flex-container">
+			<h2 id="printBtn" onclick='printBtn()'>
+				PRINT
+			</h2>
+		</div>
+	</div>
+
+	<div class="set-behind" onclick="exitSet()"></div>
+	<div class="set-pos">
+		<div class="settings">
+			<div>
+				<div class="container sb-flex-container set-subhead">
+					<div class="container">
+						<h2 class="block-btn user-back" onclick="setSave()">Save</h2>
+					</div>
+					<h2 class="block-name">Settings</h2>
+					<div class="container">
+						<h2 class="block-btn" onclick="setCancel()">Cancel</h2>
+					</div>
+				</div>
+			</div>
+			<div class="container options">
+				<div class="option">
+					<div class="op-title">
+						<h3>Shared</h3>
+					</div>
+					<div class="w-flex-container">
+						<div class="op">
+							<div class="op-name">
+								<h3>Number of Shared chores:</h3>
+							</div>
+							<input type="number" min="1" name="set-share-max">
+						</div>
+						<div class="op">
+							<div class="op-name">
+								<h3>Start:</h3>
+							</div>
+							<input type="number" min="1" name="set-share-start">
+						</div>
+						<div class="op">
+							<div class="op-name">
+								<h3>Color theme:</h3>
+							</div>
+							<input type="color" value="#05ff75" name="set-color">
+						</div>
+						<div class="op">
+							<div class="op-name">
+								<h3>Example:</h3>
+							</div>
+							<h1 class="header-text user-color" name="set-ex">Chore Chart</h1>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="off-screen">
+		<div class="option">
+			<div class="op-title">
+				<h3>user</h3>
+				<div class="sb-flex-container add-alt">
+					<span onclick="deleteOpt(event)">x</span>
+					<span onclick="addOpt(event)">+</span>
+				</div>
+			</div>
+			<div class="w-flex-container">
+				<div class="op">
+					<div class="op-name">
+						<h3>Name:</h3>
+					</div>
+					<input type="text" name="set-name">
+				</div>
+				<div class="op">
+					<div class="op-name">
+						<h3>Everyday chores (semicolon separated):</h3>
+					</div>
+					<textarea name="set-daily"></textarea>
+				</div>
+				<div class="op">
+					<div class="op-name op-chores">
+						<h3>Number of users chores:</h3>
+					</div>
+					<input type="number" min="1" name="set-specific" value="1">
+				</div>
+				<div class="op">
+					<div class="op-name">
+						<h3>Start:</h3>
+					</div>
+					<input type="number" min="1" name="set-spec-start" value="1">
+				</div>
+				<div class="op op-alt">
+					<div class="op-name">
+						<h3>Alternating chore:</h3>
+					</div>
+					<div class="sb-flex-container add-alt">
+						<span onclick="deleteAlt(event)">x</span>
+						<span onclick="addAlt(event)">+</span>
+					</div>
+					<input type="text" name="set-alternating">
+				</div>
+				<div class="op">
+					<div class="op-name">
+						<h3>Options, max of 3 letters (semicolon separated):</h3>
+					</div>
+					<textarea name="set-option"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>
